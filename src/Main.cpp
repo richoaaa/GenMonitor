@@ -503,20 +503,20 @@ void loop() {
     VoidCycleTime = millis();
     sensor.clearFields();
     sensor.addField("Gen Voltage", Voltage);
-    // sensor.addField("Gen Voltage ADC", VoltageADC);
-    // sensor.addField("Gen Oil Pressure", OilPressure);
-    // sensor.addField("Gen Oil Pressure ADC", OilADC);
-    // sensor.addField("Ambiant Temp", AmbiantTemperature);
-    // sensor.addField("Engine Temp", EngineTemperature);
-    // sensor.addField("Coolant Temp", CoolantTemperature);
-    // sensor.addField("Generator Current", GenCurrent);
-    // sensor.addField("Fuel Economy", FuelEconomy);
-    // sensor.addField("Fuel Level", FuelLevel);
-    // sensor.addField("Fuel Level ADC", fuelADC);
-    // sensor.addField("Session run time", runtimeStr);
-    // sensor.addField("Total run time",
-    //                 (engineRunTime + millis()) / MILLISECONDS_PER_HOUR);
-    // sensor.addField("RSSI", RSSI);
+    sensor.addField("Gen Voltage ADC", VoltageADC);
+    sensor.addField("Gen Oil Pressure", OilPressure);
+    sensor.addField("Gen Oil Pressure ADC", OilADC);
+    sensor.addField("Ambiant Temp", AmbiantTemperature);
+    sensor.addField("Engine Temp", EngineTemperature);
+    sensor.addField("Coolant Temp", CoolantTemperature);
+    sensor.addField("Generator Current", GenCurrent);
+    sensor.addField("Fuel Economy", FuelEconomy);
+    sensor.addField("Fuel Level", FuelLevel);
+    sensor.addField("Fuel Level ADC", fuelADC);
+    sensor.addField("Session run time", runtimeStr);
+    sensor.addField("Total run time",
+                    (engineRunTime + millis()) / MILLISECONDS_PER_HOUR);
+    sensor.addField("RSSI", RSSI);
 
     if (!client.writePoint(sensor)) {
       Serial.print("InfluxDB write failed: ");
